@@ -3,7 +3,7 @@
 
 This 'control' cookie consent notice forms part of my Master of IS research. It will be compared to a [Design Science Research](http://www.desrist.org/desrist/content/design-science-research-in-information-systems.pdf) (DSR) artifact that aims to produce an improved cookie consent notice. 
 
-<img src="/repo-assets/type-a.png" width="300"/>
+<img src="/repo-assets/control.png" width="425"/>
 
 Code adapted from [GlowCookies](https://github.com/manucaralmo/GlowCookies) by Almoguera (2021).
 Typology adapted from Utz et al. (2019), who evaluated the GUI of six types of cookie consent notices in a series of online experiments.
