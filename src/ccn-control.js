@@ -1,5 +1,5 @@
 /*
-    Cookie Consent Notice Type a
+    Cookie Consent Notice Control
     Adapted from https://github.com/manucaralmo/GlowCookies
 */
 
@@ -25,7 +25,7 @@ class CookieConsentNotice {
   addCss() {
     const stylesheet = document.createElement('link');
     stylesheet.setAttribute('rel', 'stylesheet');
-    stylesheet.setAttribute('href', 'ccn-type-a.css');
+    stylesheet.setAttribute('href', 'ccn-control.css');
     document.head.appendChild(stylesheet);
   }
 
@@ -49,21 +49,10 @@ class CookieConsentNotice {
                                       <h3 style="color: ${this.banner.color};">${this.banner.heading}</h3>
                                       <p style="color: ${this.banner.color};">
                                           ${this.banner.description} 
-                                          <a 
-                                              href="${this.banner.link}"
-                                              target="_blank" 
-                                              class="read__more"
-                                              style="color: ${this.banner.color};"
-                                          >
-                                              ${this.banner.linkText}
-                                          </a>
                                       </p>
                                       <div class="btn__section">
                                           <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
                                               ${this.banner.acceptBtn.text}
-                                          </button>
-                                          <button type="button" id="rejectCookies" class="btn__settings settings__btn__styles" style="color: ${this.banner.rejectBtn.color}; background-color: ${this.banner.rejectBtn.background};">
-                                              ${this.banner.rejectBtn.text}
                                           </button>
                                       </div>
                                   </div>
@@ -75,7 +64,6 @@ class CookieConsentNotice {
     // SET EVENT LISTENERS
     document.getElementById('prebannerBtn').addEventListener('click', () => this.openSelector())
     document.getElementById('acceptCookies').addEventListener('click', () => this.acceptCookies())
-    document.getElementById('rejectCookies').addEventListener('click', () => this.rejectCookies())
   }
 
   checkStatus() {
@@ -251,8 +239,6 @@ class CookieConsentNotice {
 
     this.banner = {
       description: obj.bannerDescription || lang.bannerDescription,
-      linkText: obj.bannerLinkText || lang.bannerLinkText,
-      link: obj.policyLink || '#link',
       background: obj.bannerBackground || '#fff',
       color: obj.bannerColor || '#4a4a4a',
       heading: obj.bannerHeading !== 'none' ? obj.bannerHeading || lang.bannerHeading : '',
@@ -260,11 +246,6 @@ class CookieConsentNotice {
         text: obj.acceptBtnText || lang.acceptBtnText,
         background: obj.acceptBtnBackground || '#209cee',
         color: obj.acceptBtnColor || '#fff'
-      },
-      rejectBtn: {
-        text: obj.rejectBtnText || lang.rejectBtnText,
-        background: obj.rejectBtnBackground || '#eeeeee',
-        color: obj.rejectBtnColor || '#4a4a4a'
       },
       manageCookies: {
         color: obj.manageColor || '#4a4a4a',
@@ -284,9 +265,7 @@ class LanguagesGC {
     let lang = this.arrLang[code] || this.arrLang['en']
     this.bannerHeading = lang['bannerHeading']
     this.bannerDescription = lang['bannerDescription']
-    this.bannerLinkText = lang['bannerLinkText']
     this.acceptBtnText = lang['acceptBtnText']
-    this.rejectBtnText = lang['rejectBtnText']
     this.manageText = lang['manageText']
   }
 
@@ -295,17 +274,13 @@ class LanguagesGC {
       af: {
         'bannerHeading': 'Ons gebruik koekies',
         'bannerDescription': 'Ons gebruik ons eie koekies en die van derdepartye, om inhoud te verpersoonlik en om webverkeer te ontleed.',
-        'bannerLinkText': 'Lees meer oor koekies',
         'acceptBtnText': 'Aanvaar koekies',
-        'rejectBtnText': 'Weier',
         'manageText': 'Koekie-instellings'
       },
       en: {
         'bannerHeading': 'We use cookies',
         'bannerDescription': 'We use our own and third-party cookies to personalize content and to analyze web traffic.',
-        'bannerLinkText': 'Read more about cookies',
         'acceptBtnText': 'Accept cookies',
-        'rejectBtnText': 'Reject',
         'manageText': 'Manage cookies'
       }
     }

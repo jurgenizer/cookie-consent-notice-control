@@ -39,7 +39,7 @@
   padding: 13px 15px;
   font-size: 15px;
   font-family: inherit;
-  width: 49%;
+  width: 100%;
   cursor: pointer;
   font-weight: bolder;
   transition: filter 0.15s;
@@ -51,7 +51,7 @@
   padding: 13px 15px;
   font-family: inherit;
   font-size: 15px;
-  width: 49%;
+  width: 100;
   cursor: pointer;
   font-weight: bolder;
   transition: filter 0.15s;
@@ -104,14 +104,6 @@
   margin: 0px;
   padding: 0px;
   line-height: 1.3;
-}
-
-.cookieConsentNotice__banner__basic .read__more {
-  font-weight: bolder;
-}
-
-.cookieConsentNotice__banner__basic .read__more:hover {
-  opacity: 0.8;
 }
 
 .cookieConsentNotice__banner__basic .btn__section {
